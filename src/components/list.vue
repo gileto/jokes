@@ -1,7 +1,10 @@
 <template>
 <div>
     <ul>
-        <item />
+        <item 
+            v-for="anec of anecdotes"
+            v-bind:anec="anec"
+        />
     </ul>
 </div>
 </template>
