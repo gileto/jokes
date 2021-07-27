@@ -1,7 +1,7 @@
 <template>
     <li v-bind:class="{done: anec.liked}">
     {{anec.text}}
-    <button v-bind:class="{doneBtn: anec.liked}"> Like </button>
+    <button v-bind:class="{doneBtn: anec.liked}" v-on:click="anec.liked = !anec.liked"> Like </button>
     </li>
 </template>
 
