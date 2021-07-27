@@ -1,14 +1,15 @@
 <template>
 <div>
-<ul>
-<item/>
-</ul>
+    <ul>
+        <item />
+    </ul>
 </div>
 </template>
 
 <script>
 import item from '@/components/item'
 export default {
+    props: ['anecdotes'],
     components: {
         item
     }

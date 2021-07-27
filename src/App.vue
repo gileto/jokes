@@ -1,13 +1,24 @@
 <template>
   <div id="app">
   <h1>Анекдоты</h1>
-  <list/>
+  <list 
+    v-bind:anecdotes="anecdotes"
+  />
   </div>
 </template>
 
 <script>
 import list from '@/components/list'
 export default {
+  data() {
+    return {
+      anecdotes: [
+        {id: 1, text: 'lalala', liked: false },
+        {id: 2, text: 'ldddffalala', liked: false },
+        {id: 3, text: 'laladfdgla', liked: false },
+      ]
+    }
+  },
   name: 'App',
   components: {
     list
