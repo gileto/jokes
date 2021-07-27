@@ -1,6 +1,7 @@
 <template>
     <li>
-    {{ anec.text}}
+    {{anec.text}}
+    <button>Like</button>
     </li>
 </template>
 
@@ -15,8 +16,19 @@ export default {
 
 <style scoped> 
     li {
+    display: flex;
     border: 1px solid gray;
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 10px;
+    }
+
+
+    button {
+        padding: 10px;
+        background: transparent;
+        border: 1px solid gray;
+        border-radius: 10px;
+        margin-left: auto;
+        color: gray;
     }
 </style>
