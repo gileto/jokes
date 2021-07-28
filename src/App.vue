@@ -1,9 +1,9 @@
 <template>
   <div id="app">
   <h1>Анекдоты</h1>
-  <search/>
+  <search v-on:search="doSearch"/>
   <list 
-    v-bind:anecdotes="anecdotes"
+    v-bind:anecdotes="filteredJokes"
   />
   </div>
 </template>
@@ -14,7 +14,8 @@ import search from '@/components/search'
 export default {
   data() {
     return {
-      anecdotes: []
+      anecdotes: [],
+      temporarySearch: "",
     }
   },
   name: 'App',
@@ -27,7 +28,17 @@ export default {
   },
   components: {
     list, search
-  }
+  },
+  computed: {
+    filteredJokes() {
+      return this.anecdotes.filter((a) => a.joke.toLowerCase().includes(this.temporarySearch.toLowerCase()));
+    }
+  },
+  methods: {
+    doSearch(searchVal) {
+      this.temporarySearch = searchVal
+    }
+  },
 }
 </script>
 

@@ -4,14 +4,9 @@
 
 <script>
 export default {
-    data() {
-        return {
-            title: ""
-        }
-    },
     methods: {
         onChange(e) {
-            console.log(e.target.value);
+            this.$emit('search', e.target.value)
         }
     },
 }
@@ -29,5 +24,6 @@ export default {
         width: 50%;
         border: 1px solid gray;
         padding: 10px;
+        margin-bottom: 20px;
     }
 </style>
