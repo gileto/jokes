@@ -1,6 +1,7 @@
 <template>
   <div id="app">
   <h1>Анекдоты</h1>
+  <search/>
   <list 
     v-bind:anecdotes="anecdotes"
   />
@@ -9,19 +10,23 @@
 
 <script>
 import list from '@/components/list'
+import search from '@/components/search'
 export default {
   data() {
     return {
-      anecdotes: [
-        {id: 1, text: 'lalala', liked: false },
-        {id: 2, text: 'ldddffalala', liked: false },
-        {id: 3, text: 'laladfdgla', liked: false },
-      ]
+      anecdotes: []
     }
   },
   name: 'App',
+  mounted() {
+    fetch('https://v2.jokeapi.dev/joke/Programming?type=single&amount=10')
+      .then(response => response.json())
+      .then(json => {
+        this.anecdotes = json.jokes.map((anec) => {anec.liked = JSON.parse(localStorage.getItem("joke_" + anec.id)); return anec})
+      })
+  },
   components: {
-    list
+    list, search
   }
 }
 </script>
@@ -37,5 +42,9 @@ body {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+pre {
+  text-align: left;
 }
 </style>
