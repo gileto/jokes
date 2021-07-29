@@ -1,5 +1,5 @@
 <template>
-        <input type="text" placeholder="Поиск по слову: ввести слово и нажать Enter" v-on:input="onChange"></input>
+        <input type="text" placeholder="search" v-on:input="onChange"></input>
 </template>
 
 <script>

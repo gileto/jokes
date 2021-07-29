@@ -23,7 +23,7 @@ export default {
 ul {
 list-style-type: none;
 border: 1px solid gray;
-margin: 0 auto;
+margin: 0 auto 50px auto;
 max-width: 1000px;
 padding: 20px;
 }

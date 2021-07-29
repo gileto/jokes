@@ -48,10 +48,11 @@ export default {
         transition: all ease 0.5s;
         cursor: pointer;
         height: 32px;
+        align-self: center;
     }
 
     button:hover {
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
 
     .done {

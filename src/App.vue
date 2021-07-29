@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-  <h1>Анекдоты</h1>
+  <h1>Jokes</h1>
+  <h2>Test by Maria Gileto</h2>
   <search v-on:search="doSearch"/>
   <list 
     v-bind:anecdotes="filteredJokes"
