@@ -1,5 +1,9 @@
 # jokes
 
+## Deploy
+
+https://gileto-jokes.surge.sh/
+
 ## Project setup
 ```
 npm install
